@@ -21,14 +21,15 @@ function App() {
     firstName: "",
     lastName: "",
     email: "",
+    comments: "",
   });
   function changeHandler(event) {
     setFormData(function (prevFormData) {
       return { ...prevFormData, [event.target.name]: event.target.value };
     });
   }
-
   console.log(formData);
+
   return (
     <div className="App">
       <form>
@@ -56,6 +57,14 @@ function App() {
           onChange={changeHandler}
           name="email"
           value={formData.email}
+        />
+        <br />
+        <br />
+        <textarea
+          placeholder="comments"
+          onChange={changeHandler}
+          name="comments"
+          value={formData.comments}
         />
       </form>
     </div>
