@@ -23,6 +23,7 @@ function App() {
     email: "",
     comments: "",
     isVisible: true,
+    mode: "",
   });
   function changeHandler(event) {
     const { name, value, checked, type } = event.target;
@@ -83,6 +84,27 @@ function App() {
           checked={formData.isVisible}
         />
         <label htmlFor="isVisible">Am I Visible?</label>
+        <br />
+        <br />
+        <input
+          type="radio"
+          onChange={changeHandler}
+          name="mode"
+          value="online-mode"
+          id="online-mode"
+          checked={formData.mode === "online-mode"}
+        />
+        <label htmlFor="online-mode">Online Mode</label>
+
+        <input
+          type="radio"
+          onChange={changeHandler}
+          name="mode"
+          value="offline-mode"
+          id="offline-mode"
+          checked={formData.mode === "offline-mode"}
+        />
+        <label htmlFor="offline-mode">offline Mode</label>
       </form>
     </div>
   );
