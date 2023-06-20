@@ -86,25 +86,29 @@ function App() {
         <label htmlFor="isVisible">Am I Visible?</label>
         <br />
         <br />
-        <input
-          type="radio"
-          onChange={changeHandler}
-          name="mode"
-          value="online-mode"
-          id="online-mode"
-          checked={formData.mode === "online-mode"}
-        />
-        <label htmlFor="online-mode">Online Mode</label>
 
-        <input
-          type="radio"
-          onChange={changeHandler}
-          name="mode"
-          value="offline-mode"
-          id="offline-mode"
-          checked={formData.mode === "offline-mode"}
-        />
-        <label htmlFor="offline-mode">offline Mode</label>
+        <fieldset>
+          <legend>Mode:</legend>
+          <input
+            type="radio"
+            onChange={changeHandler}
+            name="mode"
+            value="online-mode"
+            id="online-mode"
+            checked={formData.mode === "online-mode"}
+          />
+          <label htmlFor="online-mode">Online Mode</label>
+
+          <input
+            type="radio"
+            onChange={changeHandler}
+            name="mode"
+            value="offline-mode"
+            id="offline-mode"
+            checked={formData.mode === "offline-mode"}
+          />
+          <label htmlFor="offline-mode">offline Mode</label>
+        </fieldset>
       </form>
     </div>
   );
