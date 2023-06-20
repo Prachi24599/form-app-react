@@ -24,6 +24,7 @@ function App() {
     comments: "",
     isVisible: true,
     mode: "",
+    favCar: "",
   });
   function changeHandler(event) {
     const { name, value, checked, type } = event.target;
@@ -35,11 +36,17 @@ function App() {
       };
     });
   }
-  console.log(formData);
+  // console.log(formData);
+
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("Finally printing entore form data");
+    console.log(formData);
+  }
 
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler}>
         <input
           type="text"
           placeholder="firstname"
@@ -109,6 +116,27 @@ function App() {
           />
           <label htmlFor="offline-mode">offline Mode</label>
         </fieldset>
+
+        <label htmlFor="favCar">Tell me your favourite car:</label>
+
+        <select
+          name="favCar"
+          id="favCar"
+          value={formData.favCar}
+          onChange={changeHandler}
+        >
+          <option value="scorpio">Scorpio</option>
+          <option value="maruti">Maruti</option>
+          <option value="tata">Tata</option>
+          <option value="tesla">Tesla</option>
+        </select>
+
+        <br />
+        <br />
+        {/* create submit button */}
+        <input type="submit" value="Submit" />
+        {/* By default type of button is submit in form (if we use button tag) */}
+        {/* <button>Submit</button> */}
       </form>
     </div>
   );
